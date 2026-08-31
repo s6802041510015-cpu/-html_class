@@ -377,17 +377,19 @@ export const QuizReviewTab: React.FC<QuizReviewTabProps> = ({
       </div>
 
       {/* Question Card */}
-      <div className="card border-0 shadow-md rounded-2xl p-6 bg-white">
+      <div className="card border border-slate-200 shadow-md rounded-2xl p-6 bg-white">
         <div className="d-flex align-items-center gap-2 mb-3">
-          <span className={`badge text-xs px-2.5 py-1 rounded-full font-semibold ${
-            currentQuestion.objective === 1 ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'
+          <span className={`px-3 py-1 rounded-full text-xs font-bold border inline-flex align-items-center gap-1.5 ${
+            currentQuestion.objective === 1 
+              ? 'bg-blue-100 text-blue-900 border-blue-300' 
+              : 'bg-purple-100 text-purple-900 border-purple-300'
           }`}>
-            <i className="fa-solid fa-bullseye me-1"></i>
+            <i className="fa-solid fa-bullseye"></i>
             {currentQuestion.objective === 1 ? 'วัตถุประสงค์ 1: ความหมาย HTML' : 'วัตถุประสงค์ 2: หน้าที่ HTML'}
           </span>
         </div>
 
-        <h4 className="fs-5 fw-bold text-slate-800 leading-snug mb-6">
+        <h4 className="fs-5 fw-bold text-slate-900 leading-snug mb-6">
           {currentIndex + 1}. {currentQuestion.question}
         </h4>
 
@@ -397,17 +399,17 @@ export const QuizReviewTab: React.FC<QuizReviewTabProps> = ({
             const isSelected = selectedAnswer === idx;
             const isCorrectOption = currentQuestion.correctIndex === idx;
 
-            let btnClass = 'bg-white border-slate-200 text-slate-700 hover:border-indigo-400 hover:bg-slate-50';
+            let btnClass = 'bg-white border-slate-200 text-slate-800 hover:border-indigo-500 hover:bg-indigo-50/40 font-medium';
             if (isAnswered) {
               if (isCorrectOption) {
-                btnClass = 'bg-emerald-100 border-emerald-400 text-emerald-950 font-bold shadow-xs';
+                btnClass = 'bg-emerald-100 border-emerald-500 text-emerald-950 font-bold shadow-xs';
               } else if (isSelected && !isCorrectOption) {
-                btnClass = 'bg-rose-100 border-rose-400 text-rose-950 font-bold';
+                btnClass = 'bg-rose-100 border-rose-500 text-rose-950 font-bold';
               } else {
-                btnClass = 'bg-slate-50 border-slate-200 text-slate-400 opacity-60';
+                btnClass = 'bg-slate-50 border-slate-200 text-slate-500 opacity-70';
               }
             } else if (isSelected) {
-              btnClass = 'bg-indigo-50 border-indigo-500 text-indigo-950 font-semibold shadow-xs';
+              btnClass = 'bg-indigo-50 border-2 border-indigo-600 text-indigo-950 font-bold shadow-sm';
             }
 
             return (
@@ -419,11 +421,11 @@ export const QuizReviewTab: React.FC<QuizReviewTabProps> = ({
               >
                 <div className="d-flex align-items-center gap-3">
                   <span className={`w-8 h-8 rounded-lg d-flex align-items-center justify-content-center text-xs font-bold flex-shrink-0 ${
-                    isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'
+                    isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-800'
                   }`}>
                     {String.fromCharCode(65 + idx)}
                   </span>
-                  <span className="text-sm">{opt}</span>
+                  <span className="text-sm font-semibold">{opt}</span>
                 </div>
 
                 {isAnswered && (
@@ -439,12 +441,12 @@ export const QuizReviewTab: React.FC<QuizReviewTabProps> = ({
 
         {/* Instant Answer Explanation Box (After Answering) */}
         {isAnswered && (
-          <div className="p-4 rounded-xl bg-indigo-50 border border-indigo-200 mb-6 text-xs text-indigo-950 space-y-2">
-            <div className="fw-bold d-flex align-items-center gap-2 text-sm text-indigo-900">
-              <i className="fa-solid fa-lightbulb text-amber-500"></i>
+          <div className="p-4 rounded-xl bg-indigo-50/80 border border-indigo-200 mb-6 text-xs text-indigo-950 space-y-2">
+            <div className="fw-bold d-flex align-items-center gap-2 text-sm text-indigo-950">
+              <i className="fa-solid fa-lightbulb text-amber-500 fs-6"></i>
               เฉลย: {currentQuestion.explanation}
             </div>
-            <p className="mb-0 leading-relaxed text-slate-700">
+            <p className="mb-0 leading-relaxed text-slate-800">
               <b>เหตุผลประกอบ:</b> {currentQuestion.reasoning}
             </p>
           </div>
@@ -456,10 +458,10 @@ export const QuizReviewTab: React.FC<QuizReviewTabProps> = ({
             <button
               onClick={handleConfirmAnswer}
               disabled={selectedAnswer === null}
-              className={`btn font-bold px-6 py-2.5 rounded-xl shadow-md transition-all text-sm ${
+              className={`px-6 py-2.5 rounded-xl font-bold transition-all text-sm border-0 ${
                 selectedAnswer !== null
-                  ? 'bg-indigo-600 hover:bg-indigo-700 text-white'
-                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                  ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md'
+                  : 'bg-slate-200 text-slate-500 cursor-not-allowed border border-slate-300'
               }`}
             >
               ยืนยันคำตอบ
@@ -467,7 +469,7 @@ export const QuizReviewTab: React.FC<QuizReviewTabProps> = ({
           ) : (
             <button
               onClick={handleNextQuestion}
-              className="btn bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-xl shadow-md transition-all text-sm d-flex align-items-center gap-2"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-xl shadow-md transition-all text-sm d-flex align-items-center gap-2 border-0"
             >
               <span>{currentIndex + 1 < selectedCategory.questions.length ? 'ข้อถัดไป' : 'ดูสรุปผลคะแนน'}</span>
               <i className="fa-solid fa-arrow-right"></i>

@@ -104,119 +104,103 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Navigation Tabs Bar */}
       <div className="bg-[#F8F7F4] border-t border-[#E5E1DA] overflow-x-auto">
         <div className="container-fluid max-w-7xl mx-auto px-4">
-          <ul className="nav nav-pills flex-nowrap py-2 gap-2 text-sm font-medium">
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab('dashboard')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'dashboard'
-                    ? 'bg-[#344E41] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-house"></i>
-                <span>หน้าหลัก</span>
-              </button>
-            </li>
+          <div className="d-flex align-items-center flex-nowrap py-2 gap-2 text-sm font-medium">
+            <button
+              onClick={() => setActiveTab('dashboard')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ${
+                activeTab === 'dashboard'
+                  ? 'bg-[#344E41] text-white border-[#344E41] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-house ${activeTab === 'dashboard' ? 'text-white' : 'text-[#588157]'}`}></i>
+              <span>หน้าหลัก</span>
+            </button>
 
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab('checkin')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'checkin'
-                    ? 'bg-[#344E41] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-calendar-check text-[#A3B18A]"></i>
-                <span>เช็คอินรายวัน</span>
-              </button>
-            </li>
+            <button
+              onClick={() => setActiveTab('checkin')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ${
+                activeTab === 'checkin'
+                  ? 'bg-[#344E41] text-white border-[#344E41] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-calendar-check ${activeTab === 'checkin' ? 'text-white' : 'text-[#588157]'}`}></i>
+              <span>เช็คอินรายวัน</span>
+            </button>
 
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab('content')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'content'
-                    ? 'bg-[#344E41] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-book-open text-[#588157]"></i>
-                <span>เนื้อหาบทเรียน</span>
-              </button>
-            </li>
+            <button
+              onClick={() => setActiveTab('content')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ${
+                activeTab === 'content'
+                  ? 'bg-[#344E41] text-white border-[#344E41] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-book-open ${activeTab === 'content' ? 'text-white' : 'text-[#588157]'}`}></i>
+              <span>เนื้อหาบทเรียน</span>
+            </button>
 
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab('quiz')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'quiz'
-                    ? 'bg-[#344E41] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-circle-question text-[#D4A373]"></i>
-                <span>ควิซทบทวนบทเรียน</span>
-              </button>
-            </li>
+            <button
+              onClick={() => setActiveTab('quiz')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ${
+                activeTab === 'quiz'
+                  ? 'bg-[#344E41] text-white border-[#344E41] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-circle-question ${activeTab === 'quiz' ? 'text-[#E9C46A]' : 'text-[#BC6C25]'}`}></i>
+              <span>ควิซทบทวนบทเรียน</span>
+            </button>
 
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab('badges')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'badges'
-                    ? 'bg-[#344E41] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-award text-[#E9C46A]"></i>
-                <span>สะสม Badge</span>
-              </button>
-            </li>
+            <button
+              onClick={() => setActiveTab('badges')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ${
+                activeTab === 'badges'
+                  ? 'bg-[#344E41] text-white border-[#344E41] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-award ${activeTab === 'badges' ? 'text-[#E9C46A]' : 'text-[#BC6C25]'}`}></i>
+              <span>สะสม Badge</span>
+            </button>
 
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab('leaderboard')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'leaderboard'
-                    ? 'bg-[#344E41] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-ranking-star text-[#E76F51]"></i>
-                <span>อันดับคะแนนสูงสุด</span>
-              </button>
-            </li>
+            <button
+              onClick={() => setActiveTab('leaderboard')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ${
+                activeTab === 'leaderboard'
+                  ? 'bg-[#344E41] text-white border-[#344E41] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-ranking-star ${activeTab === 'leaderboard' ? 'text-[#E76F51]' : 'text-[#E76F51]'}`}></i>
+              <span>อันดับคะแนนสูงสุด</span>
+            </button>
 
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab('analytics')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'analytics'
-                    ? 'bg-[#344E41] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-chart-line text-[#6B9AC4]"></i>
-                <span>วิเคราะห์พัฒนาการ</span>
-              </button>
-            </li>
+            <button
+              onClick={() => setActiveTab('analytics')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ${
+                activeTab === 'analytics'
+                  ? 'bg-[#344E41] text-white border-[#344E41] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-chart-line ${activeTab === 'analytics' ? 'text-white' : 'text-[#6B9AC4]'}`}></i>
+              <span>วิเคราะห์พัฒนาการ</span>
+            </button>
 
-            <li className="nav-item ms-auto">
-              <button
-                onClick={() => setActiveTab('gas-guide')}
-                className={`nav-link rounded-xl px-3.5 py-2 d-flex align-items-center gap-2 transition-all ${
-                  activeTab === 'gas-guide'
-                    ? 'bg-[#6B705C] text-white shadow-xs fw-semibold'
-                    : 'text-[#4A443F] hover:bg-[#EDEDE9]'
-                }`}
-              >
-                <i className="fa-solid fa-code-commit text-[#A3B18A]"></i>
-                <span>โค้ด GAS & Sheet ID</span>
-              </button>
-            </li>
-          </ul>
+            <button
+              onClick={() => setActiveTab('gas-guide')}
+              className={`px-3.5 py-2 rounded-xl d-flex align-items-center gap-2 transition-all whitespace-nowrap border ms-auto ${
+                activeTab === 'gas-guide'
+                  ? 'bg-[#588157] text-white border-[#588157] shadow-xs font-bold'
+                  : 'bg-white text-[#344E41] border-[#E5E1DA] hover:bg-[#EDEDE9]'
+              }`}
+            >
+              <i className={`fa-solid fa-code-commit ${activeTab === 'gas-guide' ? 'text-white' : 'text-[#588157]'}`}></i>
+              <span>โค้ด GAS & Sheet ID</span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>

@@ -95,3 +95,8 @@
   animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Ensure crisp contrast for buttons and badges */
+button:focus {
+  outline: none;
+}
+
