@@ -4,6 +4,8 @@ import { StudentProfile } from '../types';
 const STORAGE_KEY_USER = 'html_learning_student_profile';
 const STORAGE_KEY_LIFF_ID = 'html_learning_liff_id';
 
+export const DEFAULT_LIFF_ID = '2011349738-BYAwvh1z';
+
 export const DEFAULT_STUDENT: StudentProfile = {
   userId: 'LINE_USER_DEFAULT_001',
   displayName: 'นักเรียนทดสอบ (Student)',
@@ -20,7 +22,7 @@ export const DEFAULT_STUDENT: StudentProfile = {
 };
 
 export function getSavedLiffId(): string {
-  return localStorage.getItem(STORAGE_KEY_LIFF_ID) || '';
+  return localStorage.getItem(STORAGE_KEY_LIFF_ID) || DEFAULT_LIFF_ID;
 }
 
 export function saveLiffId(liffId: string): void {

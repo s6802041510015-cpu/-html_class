@@ -6,7 +6,8 @@ export const GAS_SCRIPT_CODE = `/**
  */
 
 const SHEET_ID = '1XoBFtZMCsLBDkbZvp9_lXzC4ZG54n_fJuepdRqBrq40';
-const LINE_CHANNEL_ACCESS_TOKEN = 'YOUR_LINE_OA_CHANNEL_ACCESS_TOKEN'; // ใส่ Channel Access Token จาก LINE Developers (ถ้าต้องการใช้ LINE Messaging API)
+const LINE_LIFF_ID = '2011349738-BYAwvh1z';
+const LINE_CHANNEL_ACCESS_TOKEN = '7g4ZPmflxonkT8V+/ZNrCE+wHb9ZOyU1pb2qyqhDAeASiuctbNFaXv4DQfk36ku6C1IrbDdIWzf9X/4G0xSnFF7vWrhZPkUK9K92ncoafjJ+0Gqu7jBlKW4Nwn1e2qvEFP9ZXZSzZB16EKAPZGckdAdB04t89/1O/w1cDnyilFU=';
 
 function getSpreadsheet() {
   try {
@@ -95,7 +96,8 @@ function doGet(e) {
   return responseJSON({
     status: 'success',
     message: 'Google Apps Script Web App for HTML Learning App is ready!',
-    sheetId: SHEET_ID
+    sheetId: SHEET_ID,
+    liffId: LINE_LIFF_ID
   });
 }
 
