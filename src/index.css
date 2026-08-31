@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Prompt', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #FDFBF7;
+    color: #4A443F;
+  }
+}
+
+/* Natural Tones Palette Classes & Overrides */
+.bg-natural-canvas { background-color: #FDFBF7; }
+.bg-natural-card { background-color: #FFFFFF; }
+.text-natural-dark { color: #4A443F; }
+.text-natural-moss { color: #344E41; }
+.text-natural-muted { color: #A5A58D; }
+.text-natural-sage { color: #6B705C; }
+
+/* Custom Earth & Natural Gradients */
+.earth-gradient {
+  background: linear-gradient(135deg, #6B9AC4 0%, #A3B18A 100%);
+}
+
+.gradient-purple-blue {
+  background: linear-gradient(135deg, #344E41 0%, #588157 50%, #A3B18A 100%);
+}
+
+.gradient-earth-sunset {
+  background: linear-gradient(135deg, #BC6C25 0%, #D4A373 50%, #E9EDC9 100%);
+}
+
+.gradient-card-blue {
+  background: linear-gradient(135deg, #F0EAD6 0%, #E9EDC9 100%);
+}
+
+.gradient-card-purple {
+  background: linear-gradient(135deg, #EDEDE9 0%, #D4A373/20 100%);
+}
+
+/* Stat Card Style from Natural Tones theme */
+.stat-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #E5E1DA;
+  border-bottom: 4px solid #E5E1DA;
+  transition: all 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+  border-color: #A3B18A;
+  border-bottom-color: #588157;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(163, 177, 138, 0.3);
+}
+
+.badge-glow {
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
+.rank-podium-1 {
+  background: linear-gradient(180deg, #FEFAE0 0%, #E9C46A 100%);
+  border: 2px solid #D4A373;
+}
+
+.rank-podium-2 {
+  background: linear-gradient(180deg, #F8F7F4 0%, #CCD5AE 100%);
+  border: 2px solid #A3B18A;
+}
+
+.rank-podium-3 {
+  background: linear-gradient(180deg, #FAEDCD 0%, #D4A373 100%);
+  border: 2px solid #BC6C25;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

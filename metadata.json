@@ -1,0 +1,6 @@
+{
+  "name": "วิชา การสร้างเว็บไซต์ - ระบบทบทวนและตอบคำถาม Gamification",
+  "description": "เว็บแอพพลิเคชั่นทบทวนและตอบคำถาม วิชาการสร้างเว็บไซต์ (HTML) ด้วยระบบ Gamification, LINE Login, Google Sheets & Apps Script",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
